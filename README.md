@@ -1,4 +1,4 @@
-# DevOps Streaming Demo - Deploy Docker to AWS EC2
+# DevOps Workflow Demo - Deploy Docker to AWS EC2
 
 
 ## Table of Contents:
