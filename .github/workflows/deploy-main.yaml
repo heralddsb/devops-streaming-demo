@@ -3,11 +3,6 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      stack_destroy:
-        type: boolean
-        default: false
 permissions:
   contents: read
 jobs:
