@@ -11,6 +11,6 @@ jobs:
 
     steps:
       - name: Display Environment Variable
-        run: echo "My environment variable value is: $AWS_SECRET_ACCESS_KEY_DEVOPS_PRACTICE"
+        run: echo "My ACCESS KEY variable value is:"
         env:
           MY_ENV_VARIABLE: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEVOPS_PRACTICE }}
