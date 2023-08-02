@@ -4,7 +4,6 @@ on:
     branches: [main]
 jobs:
   EC2-Deploy:
-    if: "!contains(github.head_ref, 'skip-deploy')"
     runs-on: ubuntu-latest
     steps:
       - id: deploy
