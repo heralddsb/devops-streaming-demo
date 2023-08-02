@@ -8,7 +8,7 @@ jobs:
   display-env-variable:
     runs-on: ubuntu-latest
     env:
-     MY_ACCESS_ENV: ${{secrets.AWS_SECRET_ACCESS_KEY_DEVOPS_PRACTICE}}
+     MY_ACCESS_ENV: ${{env.PARAM_ENV}}
     steps:
       - name: Display Environment Variable
         run: echo "$MY_ACCESS_ENV"
