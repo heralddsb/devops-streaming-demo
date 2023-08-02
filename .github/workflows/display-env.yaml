@@ -11,5 +11,5 @@ jobs:
      MY_ACCESS_ENV: ${{env.PARAM_ENV}}
     steps:
       - name: Display Environment Variable
-        run: echo "$MY_ACCESS_ENV"
+        run: echo "Access key is ${{ secrets.AWS_ACCESS_KEY_ID }}"
 
