@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res){
-	res.send("Hello Everyone! Learn to use Github Actions and deploy docker to Amazon EC2");
+	res.send("Hello Everyone! Use Github Actions to deploy Docker on Amazon EC2.");
 });
 
 app.listen( port, function() {
