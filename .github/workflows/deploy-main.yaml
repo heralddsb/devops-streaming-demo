@@ -1,16 +1,22 @@
 name: Basic deploy
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 jobs:
   EC2-Deploy:
+    if: "!contains(github.head_ref, 'skip-deploy')"
     runs-on: ubuntu-latest
     steps:
       - id: deploy
         uses: heralddsb/devops-streaming-demo@main
         with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_default_region: us-east-1
-          dot_env: ${{ secrets.DOT_ENV }}
+         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID}}
+         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+         aws_default_region: us-east-1
+
+        # Provide a secret called `DOT_ENV` to append environment variables to the .env file
+        # dot_env: ${{ secrets.DOT_ENV }}
+
+         app_port: 3000
+         stack_destroy: true
+         tf_state_bucket_destroy: true
