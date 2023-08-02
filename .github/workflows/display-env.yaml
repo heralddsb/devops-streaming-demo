@@ -11,5 +11,5 @@ jobs:
       - name: Display Environment Variable
         run: |
          echo "Access key is ${{ secrets.AWS_ACCESS_KEY_ID }}"
-         echo "Param is ${{ env.PARAM_ENV }}"
+         echo "Param is ${{ PARAM_ENV }}"
 
