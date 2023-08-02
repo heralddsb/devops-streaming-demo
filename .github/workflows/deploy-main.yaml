@@ -5,6 +5,13 @@ on:
       - main
 permissions:
   contents: read
+env:
+ aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_PRACTICE}}
+ aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_PRACTICE}}
+ aws_default_region: us-east-1
+ app_port: 3000
+ stack_destroy: true
+ tf_state_bucket_destroy: true  
 jobs:
   EC2-Deploy:
     runs-on: ubuntu-latest
@@ -12,13 +19,6 @@ jobs:
       - id: deploy
         name: Deploy
         uses: heralddsb/devops-streaming-demo@main
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_PRACTICE}}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_PRACTICE}}
-          aws_default_region: us-east-1
-          app_port: 3000
-          stack_destroy: true
-          tf_state_bucket_destroy: true
       - if: ${{ steps.deploy.outputs.vm_url != '' }}
         name: Print result created
         run: |
