@@ -4,7 +4,6 @@ services:
     container_name: heralddsb-streaming-demo
     build: .
     restart: always
-    env_file: .env
 # Specify a .env file for credentials
 # the 'AWS_INSTANCE_URL' environment variable will be prepended to that file
 # env_file: .env
