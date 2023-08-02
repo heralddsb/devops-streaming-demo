@@ -1,11 +1,11 @@
-version: "3.8"
-services:
-  app:
-    container_name: heralddsb-devops-streaming-demo
-    build: .
-    restart: always
-    volumes:
-      - .:/app
-      - /app/node_modules
-    ports:
-      - 3000:3000
+FROM node:18-alpine
+ENV PORT=3000
+
+WORKDIR app
+COPY ..
+
+COPY package.json .
+RUN npm install
+
+EXPOSE $PORT
+CMD npm run start
