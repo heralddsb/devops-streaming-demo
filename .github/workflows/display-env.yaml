@@ -8,9 +8,9 @@ on:
 jobs:
   display-env-variable:
     runs-on: ubuntu-latest
-
+    env:
+     MY_ENV_VARIABLE: ${{secrets.AWS_SECRET_ACCESS_KEY_ID_DEVOPS_PRACTICE}}
     steps:
       - name: Display Environment Variable
         run: echo "$MY_ENV_VARIABLE"
-        env:
-          MY_ENV_VARIABLE: ${{secrets.AWS_SECRET_ACCESS_KEY_ID_DEVOPS_PRACTICE}}
+
