@@ -1,4 +1,4 @@
-# DevOps Workflow Demo - Deploy Docker to AWS EC2
+# Tutorial - Automate the deployment of Dockerize Node JS appliation on AWS EC2
 
 
 ## Table of Contents:
